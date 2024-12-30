@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e9ecef;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            max-height: 800PX;
+            margin-top: 100px;
+            padding: 30px;
+            background-color: #c4c4c4;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px; 
+            margin-bottom: 20px; 
+        }
+        .result {
+            text-align: center; 
+        }
+        .btn-back {
+            background-color: #545454; 
+            color: white; 
+            border-radius: 5px; 
+        }
+        .btn-back:hover {
+            background-color: #434343;
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            <h2>Uploaded Image:</h2>
+            <img src="{{ IMAGE_UPLOADS }}" alt="Uploaded Image">
+            <h3>Prediction: {{ prediction }}</h3>
+            <h4>Confidence Level: {{ confidence | round(2) }}%</h4>
+            <a href="/" class="btn btn-back btn-block mt-3">Upload Another Image</a>
+        </div>
+    </div>
+</body>
+</html>
